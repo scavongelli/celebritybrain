@@ -1,0 +1,621 @@
+        
+        
+        /* Global styling */
+        
+        
+        @keyframes animatetop {
+        from {top: -300px; opacity: 0}
+        to {top: 0; opacity: 1}
+        }
+        
+        @keyframes animateMenu {
+        from {opacity: 0}
+        to {opacity: 1}
+        }
+        
+        @keyframes animateMobileMenu {
+          0% {
+            transform: translate(0, 0);
+            opacity: 0;
+          }
+          100% {
+            transform: translate(75%, 0);
+            opacity: 1;
+          }
+        }
+        
+        @keyframes marquee {
+          0% {
+            transform: translate(0, 0);
+          }
+          100% {
+            transform: translate(-100%, 0);
+          }
+        }
+        
+        
+        
+        /* HOME PAGE */
+        
+        
+        @media only screen
+        and (min-width: 1001px) {
+        #mobile-navMenuFrame, #mobile-resultsFrame { display:none; }
+        #navMenuFrame {
+          list-style-type: none; margin: 0; padding: 10px 0px; top:0; left:0;
+          width: 100%; height:24px; background-color: #26b586;
+          position: fixed; z-index: 2;
+        }
+        .navMenuLogo {
+          color: white; font-family: Fjalla One, sans-serif; cursor:pointer;
+          position:fixed; top:12; left:22;
+        }
+        #navMenuLeftPadding {
+          margin-left:130px;
+        }
+        .navMenu {
+          display: inline; 
+        }
+        .navMenu a {
+          font-family: Assistant, sans-serif; font-size: 15px;
+          display: inline; padding: 16px 16px;
+          text-decoration: none;
+          color: white;
+        }
+        .navMenu a:hover {
+          background-color: white;
+          color: black;
+        }
+        .navMenuDrop:hover #navMenuUserName {
+          background-color: white; color: black;
+        }
+        .navMenuDropFrame {
+          display: none;
+          margin-top: 16px;
+          position: fixed; top: 26px; right: 15px;
+          background-color: #f9f9f9;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1; 
+          animation-name: animateMenu;
+          animation-duration: 0.5s;
+        }
+        .navMenuDrop:hover .navMenuDropFrame {
+          display: list-item; 
+        }
+        .navMenuDropFrame a {
+          float: none;
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        .navMenuDropFrame a:hover {
+          background-color: #ddd;
+        }
+        #mobile-sideMenuFrame {
+          display:none;
+        }
+        
+        
+        body {
+          font-family: Assistant, sans-serif; font-size: 15px; margin:0 0;
+          background-color:white;
+          -webkit-border-image: -webkit-gradient(linear, left bottom, left top, from(#565656), to(#fff), color-stop(0.5, #fff), color-stop(0.5, #fff)) 0 0 0 0 repeat repeat;
+        }
+        
+        #searchAreaFrame {
+          padding-top:80px; padding-bottom:0px; text-align:center; border: 0px solid red;
+          position:fixed; top:25; left:0; width:100%; height:125px; background-color:white; z-index:1;
+        }
+        #movieChoiceInput {
+          width:40%; height:40px; padding-left:10px; outline:none; font-size:15px;
+        }
+        #spacerTop {
+          height:222px; border: 0px solid blue;
+        }
+        
+        
+        
+        #landingMovieCarousel {
+          white-space:nowrap; overflow:hidden; position:relative; padding-left:100%; margin-top:30px; display:inline-block;
+          animation: marquee 60s linear infinite; z-index:0;
+        }
+        .landingMovieCarouselPosters {
+          display:inline-block; cursor:pointer; padding-left:30px; width:240px;
+        }
+        
+        
+        
+        
+        #resultsFrame {
+          margin-left:20px; margin-top:15px; display:none;
+        }
+        
+        #lefthandInfoPanel {
+          position:fixed; display:block; top:230; left:40; width:40%; 
+          visibility:hidden;
+        }
+        #resultsMovieSection {
+          display:block;
+        }
+        /*#resultsMovieSection-info {
+          display:inline; float:left; padding-left:13px;
+        }
+        #mPoster {
+          width:184px;
+        }*/
+        #resultsMovieSection-info {
+          float:left; width:63%; display:inline; padding-left:13px; border: 0px solid red;
+        }
+        #mPosterFrame {
+          width:32%;
+        }
+        #mPoster {
+          width:100%;
+        }
+        
+        .movieInfoDisplay {
+          line-height:30px; font-size:17px;
+        }
+        #movieScoreHistory {
+          margin-top:25px; margin-left:5px; overflow:visible; white-space:nowrap;
+        }
+        .movieScoreHistoryLabels {
+          font-size:15px; font-weight:600; line-height:24px;
+        }
+        .movieScoreHistoryData {
+          font-size:15px; font-weight:400; padding-left:4px;
+        }
+        
+        
+        
+        #resultsActorSection {
+          z-index:-1; float:right; width:40%; max-width:700px; display:block; padding-left:50px; 
+        }
+        
+        .actorRowWrapper {
+          height:260px; margin-right:50px;
+          background-color: rgba(234,235,237,0.2);
+          display:none; position:relative;
+          box-shadow: -0.5px -0.5px 4px rgba(0,0,0,.5);
+        } 
+        .questionBank {
+          float:left; 
+        }
+        .radioInput {
+          font-size:17px; margin: 15px 15px;
+        }
+        .iconMarkCorrect {
+          position:absolute; left:20; bottom:10; height:70; visibility:hidden;
+        }
+        .iconMarkIncorrect {
+          position:absolute; left:20; bottom:14; height:56; visibility:hidden;
+        }
+        
+        .actorFrame {
+          width:18%; min-width:150px; max-width:400px; max-height:300px; border: 0px solid black; text-align:center;  /* 300 200 */
+        }
+        .actorFrameImage {
+          height:220px; display:block; position:absolute; right:-8; top:-8;
+          box-shadow: -5px 4px 7px rgba(0,0,0,.5);
+        }
+        .actorFrameBottom {
+          padding-top:6px; padding-left:5px; display:block; font-weight:600; position:absolute; bottom:14; right:12; visibility:hidden;
+        }
+        
+        
+        
+        #wrapperSubmit {
+          height:260px; margin-right:50px;
+          position:relative; text-align:center; 
+        }
+        #buttonSubmit {
+          cursor:pointer;
+        }
+        #buttonSubmit:hover {
+          background-color: #f442aa; border-radius:7px;
+        }
+        #quizResultsFeedback {
+          margin:auto; margin-top:40px; text-align:center;
+          font-weight:600; font-size:21px; display:none;
+        }
+        #quizResultsFeedbackScore {
+          font-weight:700; font-size:21px; color:blue; padding-left:7px;
+        }
+        #quizResultsFeedbackMessage {
+          font-weight:400; font-size:17px; color:black; padding-right:2px; padding-top:4px;
+        }
+        #quizResultsFeedback72HourWarning {
+          font-weight:300; font-size:13px; color:purple; padding-right:2px; padding-top:4px;
+        }
+        
+        
+        
+
+        .actionButtons {
+          background-color: #26b586; border: 0px solid #26b586; border-radius: 4px;
+          color: white; text-decoration: none;
+          padding: 15px 22px; margin:auto; margin-top:40px; 
+          text-align: center; display: none;
+          font-family: Assistant, sans-serif; font-size: 16px;
+        }
+        } /* end desktop-only */
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        @media only screen
+        and (max-width: 1000px) {
+        #navMenuFrame { display:none; }
+        #mobile-navMenuFrame {
+          list-style-type: none; margin: 0; padding: 10px 0px; top:0; left:0;
+          width: 100%; height:24px; background-color: #26b586;
+          position: fixed; z-index: 2;
+        }
+        .mobile-navMenuLogo {
+          color: white; font-family: Fjalla One, sans-serif; cursor:pointer;
+          position:fixed; top:12; left:15;
+        }
+        .mobile-navMenu {
+          display: inline; 
+        }
+        .mobile-navMenu a {
+          font-family: Assistant, sans-serif; font-size: 15px;
+          display: inline; padding: 16px 16px;
+          text-decoration: none; color: white;
+        }
+        #mobile-sideMenuFrame {
+          position:fixed; top:0; left:-60%; height:100%; width:68%; background-color: rgba(255,255,255,0.95); border-right: 1px solid rgba(0,0,0,0.1);
+          display:none; z-index:4; padding-top:40px; padding-right:40px;
+          font-size:17px; font-weight:600;
+          animation: animateMobileMenu .3s linear;
+          animation-fill-mode: forwards; 
+        }
+        .mobile-sideMenuItem {
+          height:50px; border-top: 1px solid rgba(0,0,0,0.4); margin:auto; margin-left:25px; padding-top:25px;
+        }
+        #mobile-sideMenuLogout {
+          height:40px; padding-top:18px; padding-left:25px;
+          background-color: rgba(234,44,44,0.13);
+          border-top: 1px solid rgba(0,0,0,0.4); border-bottom: 1px solid rgba(0,0,0,0.4);
+        }
+        #mobile-sideMenuLogin {
+          height:40px; padding-top:18px; padding-left:25px;
+          background-color: rgba(44,234,161,0.13);
+          border-top: 1px solid rgba(0,0,0,0.4); border-bottom: 1px solid rgba(0,0,0,0.4);
+        }
+        
+        
+        body {
+          font-family: Assistant, sans-serif; font-size: 15px; margin:0 0;
+          background-color:white;
+          -webkit-border-image: -webkit-gradient(linear, left bottom, left top, from(#565656), to(#fff), color-stop(0.5, #fff), color-stop(0.5, #fff)) 0 0 0 0 repeat repeat;
+        }
+        
+        #searchAreaFrame {
+          padding-top:60px; padding-bottom:0px; text-align:center; border: 0px solid red;
+          position:fixed; top:25; left:0; width:100%; height:100px; background-color:white; z-index:1;
+        }
+        #movieChoiceInput {
+          width:70%; height:40px; padding-left:10px; outline:none; font-size:14px;
+        }
+        #spacerTop {
+          height:200px; border: 0px solid blue;
+        }
+        
+        
+        
+        
+        #landingMovieCarousel {
+          white-space:nowrap; overflow:hidden; position:relative; padding-left:100%; margin-top:30px; display:inline-block;
+          animation: marquee 60s linear infinite; 
+        }
+        .landingMovieCarouselPosters {
+          display:inline-block; cursor:pointer; padding-left:30px; width:180px;
+        }
+        
+        
+        
+        
+        #resultsFrame {
+          margin-left:6px; margin-top:15px; display:none;
+        }
+        
+        #lefthandInfoPanel {
+          display:block; width:100%; visibility:hidden; z-index:0; 
+        }
+        #resultsMovieSection {
+          display:block; 
+        }
+        #resultsMovieSection-info {
+          float:left; width:63%; display:inline; padding-left:13px; border: 0px solid red;
+        }
+        #mPosterFrame {
+          width:32%;
+        }
+        #mPoster {
+          width:100%;
+        }
+        .movieInfoDisplay {
+          line-height:30px; font-size:17px;  
+        }
+        #movieScoreHistory {
+          padding-top:20px; margin-left:5px; display:none; overflow:visible; white-space:nowrap;
+        }
+        .movieScoreHistoryLabels {
+          font-size:15px; font-weight:600; line-height:24px;
+        }
+        .movieScoreHistoryData {
+          font-size:15px; font-weight:400; padding-left:4px;
+        }
+        
+        
+        
+        #resultsActorSection {
+          z-index:-1; float:right; width:100%; display:block; padding-left:50px; margin-top:45px;
+        }
+        
+        .actorRowWrapper {
+          height:260px; margin-right:15px;
+          background-color: rgba(234,235,237,0.2);
+          display:none; position:relative;
+          box-shadow: -0.5px -0.5px 4px rgba(0,0,0,.5);
+        } 
+        .questionBank {
+          float:left; 
+        }
+        .radioInput {
+          font-size:17px; margin: 15px 15px;
+        }
+        .iconMarkCorrect {
+          position:absolute; left:20; bottom:10; height:70; visibility:hidden;
+        }
+        .iconMarkIncorrect {
+          position:absolute; left:20; bottom:14; height:56; visibility:hidden;
+        }
+        
+        .actorFrame {
+          width:18%; min-width:150px; max-width:400px; max-height:300px; border: 0px solid black; text-align:center;  
+        }
+        .actorFrameImage {
+          height:220px; display:block; position:absolute; right:-8; top:-8;
+          box-shadow: -5px 4px 7px rgba(0,0,0,.5);
+        }
+        .actorFrameBottom {
+          padding-top:6px; padding-left:5px; display:block; font-weight:600; position:absolute; bottom:14; right:12; visibility:hidden;
+        }
+        
+        
+        
+        #wrapperSubmit {
+          height:260px; position:relative; text-align:center; margin: 0px 20px;
+        }
+        #buttonSubmit {
+          cursor:pointer;
+        }
+        #buttonSubmit:hover {
+          background-color: #f442aa; border-radius:7px;
+        }
+        #quizResultsFeedback {
+          margin:auto; margin-top:40px; text-align:center;
+          font-weight:600; font-size:21px; display:none;
+        }
+        #quizResultsFeedbackScore {
+          font-weight:700; font-size:21px; color:blue; padding-left:7px;
+        }
+        #quizResultsFeedbackMessage {
+          font-weight:400; font-size:17px; color:black; padding-right:2px; padding-top:4px;
+        }
+        #quizResultsFeedback72HourWarning {
+          font-weight:300; font-size:13px; color:purple; padding-right:2px; padding-top:4px;
+        }
+        
+        
+        
+
+        
+        .actionButtons {
+          background-color: #26b586; border: 0px solid #26b586; border-radius: 4px;
+          color: white; text-decoration: none;
+          padding: 15px 22px; margin:auto; margin-top:40px; 
+          text-align: center; display: none;
+          font-family: Assistant, sans-serif; font-size: 16px;
+        }
+        } /* end mobile-only */
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /* SCORE HISTORY PAGE */
+        
+        
+        
+        @media only screen
+        and (min-width: 1001px) {
+        #history-spacerTop {
+          height:140px; width:100%;
+        }
+        #history-mainFrame {
+          margin: 0 30; margin-bottom:80px;
+        }
+        #history-dataTable {
+          margin-left:40px; width:80%;
+        }
+        .history-dataTableMovieTitles {
+          cursor:pointer; color:#1d95c4;    
+        }
+        .history-dataTableMovieTitles:hover {
+          cursor:pointer; color:#f442aa; 
+        }
+        #history-dataTable td {
+          padding-left:6px; line-height:30px;
+        }
+        } /* end desktop-only */
+        
+        
+        
+        
+        
+        
+        @media only screen
+        and (max-width: 1000px) {
+        #history-spacerTop {
+          height:73px; width:100%;
+        }
+        #history-mainFrame {
+          margin: 0 10; margin-bottom:80px;
+        }
+        #history-dataTable {
+          margin-left:0px; width:100%;
+        }
+        
+        #history-dataTable td {
+          padding-left:6px; line-height:30px; 
+        }
+        .history-dataTableMovieTitles {
+          cursor:pointer; color:#1d95c4; width:60%; line-height:20px; font-size:14px;
+        }
+        .history-dataTableMovieTitles:hover {
+          cursor:pointer; color:#f442aa; 
+        }
+        .history-tableColHighScore {
+          width:17%; font-size:14px;
+        }
+        .history-tableColTotalAttempts {
+          display:none; font-size:14px;
+        }
+        .history-tableColLastAttempt {
+          font-size:14px;
+        }
+        .history-tableHeader{
+          font-size:16px; line-height:20px !important;
+        }
+        } /* end mobile-only */
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /* LEADERBOARD PAGE */
+        
+        
+        
+        @media only screen
+        and (min-width: 1001px) {
+        #leaderboard-spacerTop {
+          height:140px; width:100%;
+        }
+        #leaderboard-mainFrame {
+          margin: 0 30;
+        }
+        #leaderboard-dataTable {
+          margin-left:40px; width:90%;
+        }
+        #leaderboard-dataTable td {
+          padding-left:6px; line-height:30px;
+        }
+        .leaderboard-tableColPlayers {
+          width:23%;  
+        }
+        .leaderboard-tableColScoreAvg {
+          width:20%;  
+        }
+        .leaderboard-tableColTotalQuizzes {
+          width:17%;  
+        }
+        } /* end desktop-only */
+        
+        
+        
+        
+        
+        
+        @media only screen
+        and (max-width: 1000px) {
+        #leaderboard-spacerTop {
+          height:73px; width:100%;
+        }
+        #leaderboard-mainFrame {
+          margin: 0 10; margin-bottom:50px;
+        }
+        #leaderboard-dataTable {
+          margin-left:0px; width:100%;
+        }
+        #leaderboard-dataTable td {
+          padding-left:6px; line-height:30px;
+        }
+        .leaderboard-tableColPlayers {
+          width:23%;  
+        }
+        .leaderboard-tableColScoreAvg {
+          width:20%;  
+        }
+        .leaderboard-tableColTotalQuizzes {
+          width:17%;  
+        }
+        .leaderboard-tableColLastRecord {
+          display:none;
+        }
+        } /* end mobile-only */
+        
+        
+     
+        
